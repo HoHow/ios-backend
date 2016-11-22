@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Account-list</h1>
+    <input type='submit' value='Add' onclick="Javascript: location.href='add'">
+
+    <table>
+      <tr>
+        <th>id</th>
+        <th>userid</th>
+        <th>password</th>
+        <th>email</th>
+        <th>edit</th>
+      </tr>
+      <% for(var i =0;i<data.length;i++){%>
+      <tr>
+        <td><%= data[i].id %></td>
+        <td><%= data[i].userid %></td>
+        <td><%= data[i].password %></td>
+        <td><%= data[i].email %></td>
+        <td><input type="button" name="edit" value="Edit" onclick="Edit('<%= data[i].id%>');"></td>
+      </tr>
+      <%}%>
+    </table>  
+    <script>
+      function Edit(id){
+        window.location.href="/userEdit?id="+ id;
+      }
+    </script>  
+  </body>
+</html>
