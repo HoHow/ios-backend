@@ -14,7 +14,10 @@ router.post('/',function(req,res,next){
         var country = country[k].toString();
       }
     }
-    
+  
+   if(country == ''){
+    res.json({message:"沒有資料"})
+   }else{
    var url = "http://opendata.epa.gov.tw/ws/Data/UV/?$orderby=PublishTime%20desc&$skip=0&$top=1000&format=json";
    request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -42,7 +45,7 @@ router.post('/',function(req,res,next){
     }
   
   });
-
+  }
  }); 
 
 });

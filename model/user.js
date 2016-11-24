@@ -1,3 +1,5 @@
-function add(){
-  
-}
+var db = require('./connect');
+
+
+
+module.exports = db;
