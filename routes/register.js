@@ -22,14 +22,14 @@ router.post('/', function(req, res, next){
 
       res.json({message:err.message});
     }else{
-      console.log("a");
-      if(req.body.email != '' && req.body.password != ''){
-        registerCtrl.add(req.body,function(err,message){
-          res.json(err?400:200,message)
-          console.log("router ok");
-        });
+      // console.log("a");
+      // if(req.body.email != '' && req.body.password != ''){
+      //   registerCtrl.add(req.body,function(err,message){
+      //     res.json(err?400:200,message)
+      //     console.log("router ok");
+      //   });
         
-      }
+      // }
     }
   });
   
