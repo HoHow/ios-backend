@@ -2,6 +2,7 @@ var express = require('express');
 var Joi = require('joi');
 var bodyParser = require('body-parser');
 var registerCtrl = require('../controller/register');
+// var firebase = require("firebase");
 var router = express();
 
 
@@ -19,17 +20,16 @@ router.post('/', function(req, res, next){
 
   Joi.validate(req.body, schema, function (err, value) { 
     if(err){
-
       res.json({message:err.message});
     }else{
-      // console.log("a");
-      // if(req.body.email != '' && req.body.password != ''){
-      //   registerCtrl.add(req.body,function(err,message){
-      //     res.json(err?400:200,message)
-      //     console.log("router ok");
-      //   });
+      
+      
+        registerCtrl.add(req.body,function(err,message){
+          res.json(err?400:200,message)
+          console.log("router ok");
+        });
         
-      // }
+      
     }
   });
   
