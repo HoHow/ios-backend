@@ -17,8 +17,8 @@ var m3 = require('./m3');
 var m4 = require('./m4');
 var m5 = require('./m5');
 var m6 = require('./m6');
-var register = require('./register');
-var login = require('./login');
+// var register = require('./register');
+// var login = require('./login');
 
 
 router.use(bodyParser.json()); // for parsing application/json
@@ -38,8 +38,8 @@ router.use('/m3',m3);
 router.use('/m4',m4);
 router.use('/m5',m5);
 router.use('/m6',m6);
-router.use('/register',register);
-router.use('/login',login);
+// router.use('/register',register);
+// router.use('/login',login);
 
 
 
