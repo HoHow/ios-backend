@@ -1,7 +1,6 @@
 var express = require('express');
 var fs = require('fs');
 var multiparty = require('multiparty');
-var util = require('util');
 
 var router = express();
 
@@ -18,6 +17,7 @@ router.post('/',function(req, res, next){
 
   form.on('error', function(err) {
     console.log('Error parsing form: ' + err.stack);
+    res.json({error:err.stack});
 
   });  
 

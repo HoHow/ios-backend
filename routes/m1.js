@@ -1,5 +1,4 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var router = express();
 router.get('/', function(req, res, next){
 

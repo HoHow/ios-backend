@@ -2,8 +2,13 @@ var express = require('express');
 var Joi = require('joi');
 var bodyParser = require('body-parser');
 var registerCtrl = require('../controller/register');
-// var firebase = require("firebase");
+var firebase = require("firebase");
+
+
 var router = express();
+
+
+
 
 
  router.use(bodyParser.json());  
@@ -23,10 +28,9 @@ router.post('/', function(req, res, next){
       res.json({message:err.message});
     }else{
       
-      
+        
         registerCtrl.add(req.body,function(err,message){
           res.json(err?400:200,message)
-          console.log("router ok");
         });
         
       

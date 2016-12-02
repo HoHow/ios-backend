@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var router = express();
 
 router.post('/', function(req, res, next){
-  
+  console.log(req.body);
   var head = [
   {name: "吳先生",age:"20",gender:"男"},
   {name: "陳小姐",age:"25",gender:"女"},
@@ -12,7 +12,7 @@ router.post('/', function(req, res, next){
   var gender = req.body.gender;
   var search = '';
 
-  if(gender === "true"){
+  if(gender === true){
     var search = head.filter(function (value) {
       return value.gender ==  "男";
     });

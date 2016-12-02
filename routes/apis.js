@@ -10,6 +10,7 @@ var util = require('util');
 var request = require('request');
 var bodyParser = require('body-parser');
 var Joi = require('joi');
+var firebase = require("firebase");
 
 var m1 = require('./m1');
 var m2 = require('./m2');
