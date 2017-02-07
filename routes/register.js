@@ -11,8 +11,8 @@ var router = express();
 
 
 
- router.use(bodyParser.json());  
- router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());  
+router.use(bodyParser.urlencoded({ extended: true }));
 
 var schema = Joi.object().keys({
   email: Joi.string().email().required(),
@@ -27,16 +27,11 @@ router.post('/', function(req, res, next){
     if(err){
       res.json({message:err.message});
     }else{
-      
-        
-        registerCtrl.add(req.body,function(err,message){
-          res.json(err?400:200,message)
-        });
-        
-      
+      registerCtrl.add(req.body,function(err,message){
+        res.json(message)
+      });
     }
-  });
-  
+  });  
 });
 
 

@@ -18,7 +18,7 @@ var m3 = require('./m3');
 var m4 = require('./m4');
 var m5 = require('./m5');
 var m6 = require('./m6');
-// var register = require('./register');
+var register = require('./register');
 // var login = require('./login');
 
 
